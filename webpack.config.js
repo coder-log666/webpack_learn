@@ -3,14 +3,26 @@ const path = require('path');
 const toml = require('toml');
 const yaml = require('yamljs');
 const json5 = require('json5');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build'),
+  entry: {
+    index: './src/index.js',
+    print: './src/print.js',
   },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'build'),
+    clean: true,
+  },
+  plugins: [
+    // https://github.com/jantimon/html-webpack-plugin
+    new HtmlWebpackPlugin({
+      title: '管理输出',
+    }),
+  ],
   module: {
+    
     rules: [
       {
         test: /\.css$/i,
