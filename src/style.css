@@ -1,15 +1,6 @@
-@font-face {
-    font-family: 'MyFont';
-    /* 字体不生效： https://blog.csdn.net/weixin_38241212/article/details/117950192  */
-    src: url('./my-font.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-  }
 
 .hello {
     color: blue;
-    background: url('./bg.webp');
-    font-family: 'MyFont';
     font-size: 100px;
     background-repeat: no-repeat;
     background-size: cover;
